@@ -40,10 +40,18 @@
                     <a class="nav-link disabled">Disabled</a>
                 </li>
             </ul>
-            <form class="d-flex">
+
+            <form class="d-flex mr-3">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+            <ul class="d-flex navbar-nav mb-2 mr-3 mb-lg-0">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <img src="{{asset('images/shoppingcart.png')}}" width="32" alt="">
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
