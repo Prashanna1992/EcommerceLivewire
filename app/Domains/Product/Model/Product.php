@@ -10,4 +10,18 @@ class Product extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $table = "products";
+
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'discount_price',
+        'quantity',
+    ];
+
+    public function getCurrentPrice(){
+        return $this->discount_price ? $this->discount_price : $this->price;
+    }
 }

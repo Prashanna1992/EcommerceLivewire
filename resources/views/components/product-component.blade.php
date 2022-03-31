@@ -1,5 +1,5 @@
 <div>
-    @foreach ($products as product)
+    @foreach ($products as $product)
 
     @endforeach
 </div>

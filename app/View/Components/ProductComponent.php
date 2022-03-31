@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Domains\Product\Model\Product;
 use Illuminate\View\Component;
 
 class ProductComponent extends Component
@@ -12,9 +13,9 @@ class ProductComponent extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function mount()
     {
-        //
+        $this->products = Product::all();
     }
 
     /**
