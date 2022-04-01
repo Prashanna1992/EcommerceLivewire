@@ -1,7 +1,7 @@
 <?php
 
-use App\Domains\Frontend\Http\Controller\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Domains\Home\Http\Controller\HomeController;
 
 /*
 |--------------------------------------------------------------------------

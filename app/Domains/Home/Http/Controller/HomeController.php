@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domains\Frontend\Http\Controller;
+namespace App\Domains\Home\Http\Controller;
 
 use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Domains\Product\Model\Product;
+use App\Domains\Product\Models\Product;
 
 class HomeController extends Controller
 {

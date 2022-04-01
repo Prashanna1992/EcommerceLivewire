@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Frontend;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
-use App\Domains\Product\Model\Product;
+use App\Domains\Product\Models\Product;
 
 class Welcome extends Component
 {
@@ -21,8 +21,9 @@ class Welcome extends Component
         $this->products = Product::all();
         $this->trending = Product::all();
         if(Auth::user()){
-            $this->cart = 1;
-        }
+            $this->cart = [];
+        }else
+            $this->cart = [];
     }
 
     public function render()
