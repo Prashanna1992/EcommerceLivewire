@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="max-height:80px;">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             Wire Commerce
@@ -41,17 +41,62 @@
                 </li>
             </ul>
 
-            <form class="d-flex mr-3">
+            <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
+                <ul class="d-flex navbar-nav mb-2 mr-1 mb-lg-0 px-1">
+                    @if (Auth::user())
+                        <li class="nav-item mx-2 my-0 py-0">
+                            <a href="#" class="nav-link my-0 py-0">
+                                <i class="fa-solid fa-dolly fa-sm"></i>
+                                 <span style="font-size: 10px;">
+                                    Cart
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-2 my-0 py-0">
+                            <a href="/logout" class="nav-link my-0 py-0" onclick="event.preventDefault(); document.getElementById('logout').submit();">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span style="font-size: 10px;">
+                                    Logout
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mx-2 my-0 py-0">
+                            <a href="{{route('dashboard')}}" class="nav-link my-0 py-0">
+                                <i class="fa-solid fa-address-card"></i>
+                                <span style="font-size: 10px;">
+                                    Dashboard
+                                </span>
+                            </a>
+                        </li>
+
+                    @else
+                        <li class="nav-item">
+                            <a href="{{route('login')}}" class="nav-link my-0 py-0">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span style="font-size: 10px;">
+                                    Login
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('register')}}" class="nav-link my-0 py-0">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span style="font-size: 10px;">
+                                    Register
+                                </span>
+                            </a>
+                        </li>
+                    @endif
+                </ul>
             </form>
-            <ul class="d-flex navbar-nav mb-2 mr-3 mb-lg-0">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <img src="{{asset('images/shoppingcart.png')}}" width="32" alt="">
-                    </a>
-                </li>
-            </ul>
+            @if (Auth::user())
+                <form action="{{route('logout')}}" id="logout" method="POST">
+                    @csrf
+                </form>
+            @endif
         </div>
     </div>
 </nav>

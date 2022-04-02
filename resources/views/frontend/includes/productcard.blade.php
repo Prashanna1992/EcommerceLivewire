@@ -7,7 +7,11 @@
             @foreach ($products as $index => $product)
                 <div class="col">
                     <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    @if (!$product->images->isEmpty())
+                        <img src="{{url($product->images->first()->path)}}" class="card-img-top" alt="...">
+                    @else
+                        <img src="https://via.placeholder.com/500?text=Product+Image+Missing" class="card-img-top" alt="...">
+                    @endif
                     <div class="card-body">
                         <h5 class="card-title">{{$product->name}}</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

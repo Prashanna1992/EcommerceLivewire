@@ -1,17 +1,13 @@
 <?php
 
+use App\Domains\Home\Http\Controller\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Domains\Product\Http\Controllers\Backend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
-| Backend Routes
+| Frontend Routes
 |--------------------------------------------------------------------------
 |
 */
 
-Route::group([
-
-], function(){
-    Route::resource('product', ProductController::class);
-});
+Route::get('/products',[HomeController::class,'products']);

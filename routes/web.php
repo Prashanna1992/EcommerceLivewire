@@ -27,3 +27,7 @@ require __DIR__.'/backend/backend.php';
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'IsAdmin'], function () {
     require __DIR__.'/backend/backend.php';
 });
+
+Route::group(['prefix' => '', 'as' => 'frontend.'], function () {
+    require __DIR__.'/frontend/frontend.php';
+});

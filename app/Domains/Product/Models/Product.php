@@ -24,4 +24,9 @@ class Product extends Model
     public function getCurrentPrice(){
         return $this->discount_price ? $this->discount_price : $this->price;
     }
+
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class,'product_id','id');
+    }
 }
