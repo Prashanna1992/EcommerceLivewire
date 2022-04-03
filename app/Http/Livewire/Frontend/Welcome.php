@@ -20,6 +20,8 @@ class Welcome extends Component
         $this->title = "Welcome to Wire Commerce";
         $this->products = Product::all();
         $this->trending = Product::all();
+        $this->bestSellers = Product::all()->take(2);
+
         if(Auth::user()){
             $this->cart = [];
         }else

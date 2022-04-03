@@ -1,15 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Domains\Product\Http\Controllers\Backend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
-| Backend Routes
+| Product Routes
 |--------------------------------------------------------------------------
 |
 */
 
-Route::group(['prefix' => '', 'as' => '', 'middleware' => ''], function () {
-    require __DIR__.'/product.php';
+Route::group([
+
+], function(){
+    Route::resource('product', ProductController::class);
 });

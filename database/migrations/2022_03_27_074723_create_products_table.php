@@ -17,8 +17,6 @@ class CreateProductsTable extends Migration
             $table->uuid('id')->unique();
             $table->string('name');
             $table->text('description');
-            $table->unsignedDouble('price')->default(0.0);
-            $table->unsignedDouble('discount_price')->nullable();
             $table->unsignedBigInteger('quantity');
 
             $table->softDeletes();

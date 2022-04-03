@@ -6,9 +6,14 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-md-10 mx-auto my-3">
-                @include('frontend.includes.productcard')
+                @include('frontend.includes.productcard',['products'=>$products, 'type'=>"Trending"])
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-10 mx-auto my-3">
+                @include('frontend.includes.productcard',['products'=>$bestSellers, 'type'=>"Best Sellers"])
             </div>
         </div>
     </div>
