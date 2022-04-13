@@ -15,10 +15,7 @@ class Product extends Model
 
     protected $fillable = [
         'name',
-        'description',
-        'price',
-        'discount_price',
-        'quantity',
+        'brand',
     ];
 
     public function getCurrentPrice(){

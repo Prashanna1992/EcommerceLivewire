@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserHasCartItemsTable extends Migration
+class CreateProductVariationHasImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateUserHasCartItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_has_cart_items', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('product_variation_has_images', function (Blueprint $table) {
+            $table->unsignedBigInteger("product_variation_id");
+            $table->unsignedBigInteger("image_id");
         });
     }
 
@@ -26,6 +26,6 @@ class CreateUserHasCartItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_has_cart_items');
+        Schema::dropIfExists('variation_has_images');
     }
 }

@@ -15,11 +15,14 @@ class CreateProductVariationsTable extends Migration
     {
         Schema::create('product_variations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger("product_id");
-            $table->string("variation_type");
+            $table->unsignedBigInteger("product_id");
             $table->string("variation_name");
             $table->unsignedDouble("price");
             $table->unsignedDouble("discount_price")->nullable();
+            $table->unsignedDouble("rating")->default(0);
+            $table->unsignedInteger("quantity")->default(0);
+            $table->boolean("in_stock")->default(1);
+            $table->longText("description")->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +34,6 @@ class CreateProductVariationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_variations');
+        Schema::dropIfExists('variations');
     }
 }

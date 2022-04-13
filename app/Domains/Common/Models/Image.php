@@ -10,7 +10,8 @@ class Image extends Model
     use HasFactory;
 
     protected $fillable = [
-        ""
+        "keyword",
+        "image_path"
     ];
 
     protected $table = "images";
