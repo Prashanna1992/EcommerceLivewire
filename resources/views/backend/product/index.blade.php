@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-    @livewire('backend.products-table');
+
 @endsection
